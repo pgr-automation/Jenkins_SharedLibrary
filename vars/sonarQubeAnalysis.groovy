@@ -8,7 +8,7 @@ def call(Map config = [:]) {
     def sonarHostUrl = config.get('sonarHostUrl', 'http://192.168.1.130:9000')  // No default; user must specify
     
     // Ensure that required parameters are passed
-    if (projectKey == '' || sonarHostUrl == '' || appDirectory == '' | projectName == '' || vaultPath == '' | ) {
+    if (projectKey == '' || sonarHostUrl == '' || appDirectory == '' | projectName == '' || vaultPath == '') {
         error "Note: projectKey, sonarHostUrl,  appDirectory, projectName  must be provided."
     }
 
