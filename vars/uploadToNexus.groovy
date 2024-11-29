@@ -2,7 +2,7 @@
 def call(Map config = [:]) {
     // Ensure required parameters are provided
     def nexusRepo = config.get('nexusRepo', 'default-nexus-repo')  // Default to 'default-nexus-repo' if not provided
-    def vaultPath = config.get('vaultPath', 'secret/data/nexuscred') // Default Vault path for credentials
+    def vaultPath = config.get('vaultPath', 'path-to-vault-cred') // Default Vault path for credentials
     def altRepoName = config.get('altRepoName', 'pgr-nexus-repo-snapshot')  // Alternative repo name
     def appDirectory = config.get('appDirectory', 'spring-bootapp') // Default directory for the app
 
