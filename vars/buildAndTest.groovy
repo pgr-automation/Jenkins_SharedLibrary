@@ -4,7 +4,7 @@ def call(Map config = [:]) {
     def appDirectory = config.get('appDirectory', 'spring-bootapp') // Default to 'spring-bootapp'
     def mavenOptions = config.get('mavenOptions', '--add-opens java.base/java.lang=ALL-UNNAMED') // Default Maven options
     def skipTests = config.get('skipTests', false) // Default to false, meaning tests will run
-    def mvnCommand = skipTests ? "mvn clean package -DskipTests=true" : "mvn clean package -DskipTests=false"
+    def mvnCommand = skipTests ? "mvn clean install -DskipTests=true" : "mvn clean install -DskipTests=false"
     
     // Run build and test
     script {
