@@ -1,5 +1,4 @@
 // vars/kubernetesAgent.groovy
-@NonCPS
 def call(String jenkinsUrl = "http://192.168.1.120:8070") {
     return """
 apiVersion: v1
