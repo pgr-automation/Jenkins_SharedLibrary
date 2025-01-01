@@ -1,4 +1,3 @@
-// vars/kubernetesAgent.groovy
 def call(String jenkinsUrl = "http://192.168.1.120:8070") {
     return """
 apiVersion: v1
@@ -27,6 +26,15 @@ spec:
     volumeMounts:
     - name: workspace-volume
       mountPath: /home/jenkins/agent
+  - name: maven
+    image: maven:3.8.6-jdk-11
+    imagePullPolicy: Always
+    command:
+    - cat
+    tty: true
+    volumeMounts:
+    - name: workspace-volume
+      mountPath: /home/jenkins/agent
   volumes:
   - name: workspace-volume
     emptyDir: {}
@@ -40,4 +48,3 @@ spec:
   dnsPolicy: ClusterFirst
 """
 }
-
