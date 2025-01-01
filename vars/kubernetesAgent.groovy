@@ -27,7 +27,7 @@ spec:
     - name: workspace-volume
       mountPath: /home/jenkins/agent
   - name: maven
-    image: maven:3.8.6-jdk-11
+    image: maven:3.8.6-jdk-17
     imagePullPolicy: Always
     command:
     - cat
