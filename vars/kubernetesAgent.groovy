@@ -26,7 +26,6 @@ spec:
     volumeMounts:
     - name: workspace-volume
       mountPath: /home/jenkins/agent
-<<<<<<< HEAD
   - name: maven
     image: maven:3.8.5-openjdk-17
     imagePullPolicy: Always
@@ -36,11 +35,9 @@ spec:
     volumeMounts:
     - name: workspace-volume
       mountPath: /home/jenkins/agent
-=======
     - name: docker-sock
       mountPath: /var/run/docker.sock
       
->>>>>>> 1294e40 (adding docker socket to kubernetes agent)
   volumes:
   - name: workspace-volume
     emptyDir: {}
