@@ -51,7 +51,7 @@ pipeline {
     // 
   }
   stages {
-    stage(build agent){
+    stage('build agent'){
       agent {
         kubernetes {
           cloud "$cloudAgent"
