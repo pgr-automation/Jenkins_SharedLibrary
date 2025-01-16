@@ -4,9 +4,9 @@ pipeline {
     ARTIFACTORY_PASSWORD = credentials('artifactory-password')
   }
   agent none
-  options {
-    ansiColor('xterm')
-  }
+  // options {
+  //   ansiColor('xterm')
+  // }
   stages {
     stage('build agent') {
       agent {
@@ -20,7 +20,7 @@ pipeline {
       when {
         beforeAgent true
         not {
-          changLog '.*\\[maven-release-plugin\\].+|.*\\[jenkins-release\\].*'
+          changlog '.*\\[maven-release-plugin\\].+|.*\\[jenkins-release\\].*'
         }
       }
       steps {
