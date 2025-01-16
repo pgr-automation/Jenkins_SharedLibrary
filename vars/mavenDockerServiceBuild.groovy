@@ -32,11 +32,11 @@ def call(body) {
       BUILDERIMAGE = "${env.IMAGE_REPO_URL}/${env.ORGANIZATION}/${env.BUILDER_IMAGE_NAME}:${buildTag}"
         println "BUILDERIMAGE: ${BUILDERIMAGE}"
     } 
-
-    }
-    def yamlFileName = yamlFilePath.replace("BUILDERIMAGE", BUILDERIMAGE)
+        def yamlFileName = yamlFilePath.replace("BUILDERIMAGE", BUILDERIMAGE)
 
 }
+
+
 
 pipeline {
   environment {
