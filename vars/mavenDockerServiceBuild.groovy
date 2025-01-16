@@ -17,11 +17,11 @@ pipeline {
           podRetention never()
         }
       }
-      when {
-        beforeAgent true
-        not {
-          changlog '.*\\[maven-release-plugin\\].+|.*\\[jenkins-release\\].*'
-        }
+        when {
+          beforeAgent true
+          not {
+            changlog '.*\\[maven-release-plugin\\].+|.*\\[jenkins-release\\].*'
+          }
       }
       steps {
         script {
