@@ -15,7 +15,7 @@ def call(body) {
     def appDirectory = config.appDirectory
     def vaultPath = config.vaultPath
     def repoName = config.repoName
-
+// 
     def gitremoteURL = ""
     def gitBranch = ""
     def gitCommit = ""
