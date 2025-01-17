@@ -5,6 +5,7 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
+    //
 
     // Ensure required parameters are provided
     def cloudAgent = config.buildAgentCluster
@@ -32,11 +33,11 @@ def call(body) {
       BUILDERIMAGE = "${env.IMAGE_REPO_URL}/${env.ORGANIZATION}/${env.BUILDER_IMAGE_NAME}:${buildTag}"
         println "BUILDERIMAGE: ${BUILDERIMAGE}"
     } 
-
-    }
-    def yamlFileName = yamlFilePath.replace("BUILDERIMAGE", BUILDERIMAGE)
+        def yamlFileName = yamlFilePath.replace("BUILDERIMAGE", BUILDERIMAGE)
 
 }
+
+
 
 pipeline {
   environment {
