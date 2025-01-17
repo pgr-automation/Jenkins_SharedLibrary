@@ -11,7 +11,7 @@ pipeline {
     stage('build agent') {
       agent {
         kubernetes {
-          cloud "$cloudAgent"
+          cloud "k8-jenkins"
           yaml yamlFileName
           slaveConnectTimeout 300
           podRetention never()
