@@ -69,7 +69,7 @@ pipeline {
       }
     }
   }
-  stages {
+  
     stage('Maven Build') {
       steps {
         script {
@@ -136,6 +136,6 @@ pipeline {
         }
       }
     }
-  }
+  
   
 }
