@@ -4,7 +4,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    jenkins: "jenkins-buid_deploy"
+    jenkins: "jenkins-build_deploy"
 spec:
   containers:
   - name: "docker-agent"
@@ -15,34 +15,38 @@ spec:
     securityContext:
       privileged: true
     resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
       limits:
-        memory: "128Mi"
-        cpu: "500m"
+        memory: "2000Mi"
+        cpu: "2000m"
     volumeMounts:
     - name: "workspace-volume"
       mountPath: "/home/jenkins/agent"
     - name: "docker-sock"
       mountPath: "/var/run/docker.sock"
-  
+
   - name: "hadolint-agent"
     image: "hadolint/hadolint:v2.12.0-alpine"
+    command:
+      - "cat"
     tty: true
-    securityContext:
-      privileged: true
     resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
       limits:
-        memory: "128Mi"
-        cpu: "500m"
+        memory: "2000Mi"
+        cpu: "2000m"
     volumeMounts:
     - name: "workspace-volume"
       mountPath: "/home/jenkins/agent"
-    - name: "docker-sock"
-      mountPath: "/var/run/docker.sock"
-  
+
   nodeSelector:
     kubernetes.io/os: "linux"
   restartPolicy: "Never"
-  serviceAccount: "jenkins"
+  serviceAccountName: "jenkins"
   volumes:
   - name: "workspace-volume"
     emptyDir: {}
@@ -51,4 +55,3 @@ spec:
       path: "/var/run/docker.sock"
 """
 }
-
