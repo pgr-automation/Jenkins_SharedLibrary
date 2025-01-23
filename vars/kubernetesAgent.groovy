@@ -4,7 +4,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    jenkins: "jenkins-buil_deploy"
+    jenkins: "jenkins-buid_deploy"
 spec:
   containers:
   - name: "docker-agent"
