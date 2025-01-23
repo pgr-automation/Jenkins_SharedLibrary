@@ -7,10 +7,10 @@ def getBranchName(String branchName) {
     return branch.split('/').size() == 1 ? branch.split('/')[-1] : branch.split('/')[1..-1].join('/')
 }
 
-def getkuberneters(cluster){
-  def map = ['build-agent': 'k8-jenkins', 'deploy-cluster-p': 'k8-jenkins-2']
-  return map[cluster]
-}
+// def getkuberneters(cluster){
+//  def map = ['build-agent': 'k8-jenkins', 'deploy-cluster-p': 'k8-jenkins-2']
+//  return map[cluster]
+// }
 
 
 def redLog(String message) {
