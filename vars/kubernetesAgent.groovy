@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
   - name: "docker-agent"
-    image: "docker:latest"
+    image: "docker:24.0.6-dind"
     command:
       - "cat"
     tty: true
