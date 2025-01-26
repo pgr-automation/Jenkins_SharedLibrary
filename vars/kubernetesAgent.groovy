@@ -5,6 +5,7 @@ kind: Pod
 metadata:
   labels:
     jenkins: "jenkins-buid_deploy"
+  namespace: "jenkins-agent"
 spec:
   containers:
   - name: "docker-agent"
